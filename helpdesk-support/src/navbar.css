@@ -1,0 +1,44 @@
+.nav-menu{
+    background-color:rgba(65, 105, 225, 0.831);
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 64px;
+    left: -100%;
+    transition: 850ms;
+}
+.nav-menu.active{
+    left: 0;
+    transition: 350ms;
+}
+svg{
+    color: white;
+}
+.nav-menu-item{
+    margin-top: 30px;
+    margin-right: 10px;
+}
+.menu-text{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px 8px 16px;
+    height:50px;
+}
+.menu-text a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+.menu-text a:hover{
+    background-color: rgb(98, 87, 255);
+}
+span{
+    margin-left: 16px;
+}
