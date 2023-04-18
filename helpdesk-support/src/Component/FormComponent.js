@@ -35,7 +35,8 @@ const FormComponent = ()=>{
             setErrorPassword('รหัสผ่านต้องมีจำนวน 8 ตัวอักษร')
             setPasswordColor('gainsboro')
         }
-        
+        if(email === ''){
+        }else if(email.includes('@') && password.length>=8){
         const jsonData = {
             email: email,
             password: password,
@@ -64,7 +65,7 @@ const FormComponent = ()=>{
                 }
             }postJSON(jsonData);
     } 
-
+    }
     const validateFormlogin = (e)=>{
         e.preventDefault()
         if(emaillogin.includes('@')){

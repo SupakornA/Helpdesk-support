@@ -17,6 +17,33 @@ import Select from '@mui/material/Select';
 import React, { useState, useEffect } from 'react';
   
 export default function Users() {
+  useEffect(()=>{
+    const token = localStorage.getItem('token')
+    async function postJSON() {
+      try {
+      const response = await fetch("http://localhost:3333/authen", {
+          method: "POST",
+          headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer "+token
+          },
+      });
+      const result = await response.json();
+      if(result.status === 'ok'){
+          //alert(' succes') 
+      }else{
+          alert(' fail')
+          localStorage.removeItem('token');
+          window.location = '/'
+      }
+      
+      console.log("Success:", result);
+      } catch (error) {
+      console.error("Error:", error);
+      }
+    } 
+    postJSON();
+  }, [])
   const [items, setItems] = useState([]);
   const [itemsfilter, setItemsfilter] = useState([]);
   const [menu, setMenu] = useState('');
